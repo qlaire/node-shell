@@ -11,10 +11,8 @@ function pwd(file, done) {
 
 function ls(file, done) {
   fs.readdir('.', function(err, files) {
-  if (err) throw err;
-  files.forEach(function(file) {
-    done(file.toString() + "\n");
-  });
+    if (err) throw err;
+    done(files.join("\n"));
   });
 }
 
